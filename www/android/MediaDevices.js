@@ -37,16 +37,9 @@ mediaDevices.enumerateDevices = function () {
 mediaDevices.getUserMedia = function (constraints) {
     var mediaDevice = this.nativeMediaDevices;
 
-    var audio = false;
+    var audio = true;
     var video = false;
-
-    if (typeof constraints.audio === 'object' || constraints.audio === true) {
-        audio = true;
-    }
-    if (typeof constraints.video === 'object' || constraints.video === true) {
-        video = true;
-    }
-
+  
     return new Promise(function (resolve, reject) {
         var success = function () {
             mediaDevices.getUserMedia(constraints)
