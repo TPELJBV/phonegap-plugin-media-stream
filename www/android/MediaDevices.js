@@ -49,7 +49,7 @@ mediaDevices.getUserMedia = function (constraints) {
 
     return new Promise(function (resolve, reject) {
         var success = function () {
-            mediaDevice.getUserMedia(constraints)
+            mediaDevices.getUserMedia(constraints)
                 .then(function (stream) {
                     resolve(stream);
                 })
